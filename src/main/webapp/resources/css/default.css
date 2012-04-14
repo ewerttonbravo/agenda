@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+* {
+	font-family: Verdana, sans-serif;
+}
+body {
+	background-color: gray;
+	margin: 0;
+	min-width: 960px;
+}
+footer {
+	font-size: 8px;
+	text-align: center;
+}
