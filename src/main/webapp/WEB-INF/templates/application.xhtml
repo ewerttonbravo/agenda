@@ -6,15 +6,19 @@
 
 <head>
 	<title>
-		<ui:define name="pageTitle">Agenda Telefônica</ui:define>
+		<ui:insert name="pageTitle">Agenda Telefônica</ui:insert>
 	</title>
+	<link rel="stylesheet" type="text/css" 
+		href="#{facesContext.externalContext.requestContextPath}/resources/css/default.css" />
+	<link rel="stylesheet" type="text/css" 
+		href="#{facesContext.externalContext.requestContextPath}/resources/css/fluid_grid.css" />
 </head> 
 <body> 
 	<div id="top"></div>
 	<div class="container">
-		<ui:define name="content">
+		<ui:insert name="content">
 			Conteudo
-		</ui:define>
+		</ui:insert>
 	</div>
 	<div id="footer">
 		Agenda© - Todos os direitos reservados - 2012

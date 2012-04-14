@@ -7,7 +7,30 @@
 	<ui:composition template="/WEB-INF/templates/application.xhtml">
 			<ui:define name="pageTitle">Novo contato</ui:define>
 			<ui:define name="content">
-				Novo contato
+				<h:form id="contato_form" prependId="false">
+					<h:panelGrid columns="2">
+						<h:outputLabel value="Nome" />
+						<h:inputText value=""  />
+						
+						<h:outputLabel value="Profissão" />
+						<h:inputText value="" />
+						
+						<h:outputLabel value="Empresa" />
+						<h:inputText value="" />
+						
+						<h:outputLabel value="Telefones" />
+						<h:inputText value="" id="telefone2" />
+						
+						<h:outputLabel value="Email" />
+						<h:inputText value="" />
+						
+						<h:outputLabel value="Nascimento" />
+						<h:inputText value="" />
+						
+						<h:outputLabel value="Endereço" />
+						<h:inputText value="" />
+					</h:panelGrid>
+				</h:form>
 			</ui:define>
 	</ui:composition>
 
