@@ -15,5 +15,6 @@
         <property name="hibernate.max_fetch_depth">2</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         
+        <mapping class="br.com.cesupa.agenda.contato.Contato"/>
     </session-factory>
 </hibernate-configuration>

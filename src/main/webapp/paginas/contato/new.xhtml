@@ -10,26 +10,27 @@
 				<h:form id="contato_form" prependId="false">
 					<h:panelGrid columns="2">
 						<h:outputLabel value="Nome" />
-						<h:inputText value=""  />
+						<h:inputText value="#{contato.nome}"  />
 						
 						<h:outputLabel value="Profissão" />
-						<h:inputText value="" />
+						<h:inputText value="#{contato.profissao}" />
 						
 						<h:outputLabel value="Empresa" />
-						<h:inputText value="" />
+						<h:inputText value="#{contato.empresa}" />
 						
 						<h:outputLabel value="Telefones" />
-						<h:inputText value="" id="telefone2" />
+						<h:inputText value="#{contato.telefone}" id="telefone2" />
 						
 						<h:outputLabel value="Email" />
-						<h:inputText value="" />
+						<h:inputText value="#{contato.email}" />
 						
 						<h:outputLabel value="Nascimento" />
-						<h:inputText value="" />
+						<h:inputText value="#{contato.dataNascimento}" />
 						
 						<h:outputLabel value="Endereço" />
-						<h:inputText value="" />
+						<h:inputText value="#{contato.endereco}" />
 					</h:panelGrid>
+					<h:commandButton value="Salvar" action="#{contatoBean.salvar}" />
 				</h:form>
 			</ui:define>
 	</ui:composition>

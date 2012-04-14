@@ -10,6 +10,16 @@
             </rule>
         </navigation>
     </page -->
-    
-       
+	
+	<page view-id="/paginas/contato/new.xhtml">
+		<navigation from-action="#{contatoBean.salvar}">
+			<rule if-outcome="success">
+				<redirect view-id="/paginas/contato/contatos.xhtml" include-page-params="false">
+				</redirect>
+			</rule>
+			<rule if-outcome="fail">
+				<redirect view-id="/index.html"></redirect>
+			</rule>
+		</navigation>
+	</page>
 </pages>
