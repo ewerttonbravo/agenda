@@ -1,6 +1,7 @@
 package br.com.cesupa.agenda.contato;
 
-import org.hibernate.Session;
+import javax.persistence.EntityManager;
+
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Logger;
@@ -16,8 +17,11 @@ public class ContatoBean {
 	@In(create=true)
 	private Contato contato;
 	
-	@In("agendaSession")
-	private Session session;
+//	@In("agendaSession")
+//	private Session session;
+	
+	@In
+	private EntityManager agendaEntityManager;
 	
 	@Logger
 	private Log logger;
