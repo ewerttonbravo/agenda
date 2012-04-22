@@ -17,11 +17,11 @@ public class ContatoBean {
 	@In(create=true)
 	private Contato contato;
 	
-//	@In("agendaSession")
-//	private Session session;
+//	@In
+//	private EntityManager agendaEntityManager;
 	
-	@In
-	private EntityManager agendaEntityManager;
+	@In(create=true)
+	private ContatoDAO contatoDAO;
 	
 	@Logger
 	private Log logger;
@@ -30,8 +30,11 @@ public class ContatoBean {
 	
 	public String salvar() {
 		logger.info("Salvando contato #0", contato.getNome());
-		session.save(contato);
+		try {
+			contatoDAO.save(contato);
+		} catch (Exception e) {
+			logger.error("Erro ao salvar contato", e);
+		}
 		return "success";
 	}
-	
 }
