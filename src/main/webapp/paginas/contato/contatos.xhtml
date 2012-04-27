@@ -2,33 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:s="http://jboss.com/products/seam/taglib">
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 	<ui:composition template="/WEB-INF/templates/application.xhtml">
 			<ui:define name="pageTitle">Todos os Contatos</ui:define>
 			<ui:define name="content">
-				<s:link value="Novo" view="/paginas/contato/new.xhtml"></s:link>				
-				<h:form>
-					<h:dataTable var="contato" value="#{contatos}" styleClass="table">
-						<h:column>
-							<f:facet name="header">ID</f:facet>
-							<h:outputText value="#{contato.id}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">Nome</f:facet>
-							<h:commandLink value="#{contato.nome}" action="#{contatoBean.editar}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">Data Nascimento</f:facet>
-							<h:outputText value="#{contato.dataNascimento}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">Profissão</f:facet>
-							<h:outputText value="#{contato.profissao}" />
-						</h:column>
-					</h:dataTable>
-				</h:form>
+				Lista de todos os contatos
 			</ui:define>
 	</ui:composition>
 

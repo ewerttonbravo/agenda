@@ -1,33 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
 
 <head>
-<title>
-	<ui:insert name="pageTitle">Agenda Telefônica</ui:insert>
-</title>
-<link rel="stylesheet" type="text/css"
-	href="#{facesContext.externalContext.requestContextPath}/resources/css/default.css" />
-<link rel="stylesheet" type="text/css"
-	href="#{facesContext.externalContext.requestContextPath}/resources/css/fluid_grid.css" />
-</head>
-<body>
-	<div id="top">
-		<H1>Agenda Telefonica</H1>
+	<title>
+		<ui:insert name="pageTitle">Agenda Telefônica</ui:insert>
+	</title>
+	<link rel="stylesheet" type="text/css" 
+		href="#{facesContext.externalContext.requestContextPath}/resources/css/default.css" />
+	<link rel="stylesheet" type="text/css" 
+		href="#{facesContext.externalContext.requestContextPath}/resources/css/fluid_grid.css" />
+</head> 
+<body> 
+	<div id="top"></div>
+	<div class="container">
+		<ui:insert name="content">
+			Conteudo
+		</ui:insert>
 	</div>
-	<div class="container_12">
-		<div id="content" class="grid_12">
-			<ui:insert name="content">
-				Conteudo
-			</ui:insert>
-		</div>
+	<div id="footer">
+		Agenda© - Todos os direitos reservados - 2012
 	</div>
-	<div class="clearfix"></div>
-	<div id="footer">Agenda© - Todos os direitos reservados - 2012</div>
-	<script type="text/javascript">
-		<ui:insert name="script" />
-	</script>
-</body>
+</body> 
 </html>

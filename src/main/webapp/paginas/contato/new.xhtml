@@ -2,43 +2,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:s="http://jboss.com/products/seam/taglib">
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
-	<ui:composition template="/WEB-INF/templates/form.xhtml">
+	<ui:composition template="/WEB-INF/templates/application.xhtml">
 			<ui:define name="pageTitle">Novo contato</ui:define>
-			<ui:param name="pageHeader" value="Novo Contato" />
-			<ui:define name="formulario">
+			<ui:define name="content">
 				<h:form id="contato_form" prependId="false">
-					<s:decorate template="/WEB-INF/templates/edit.xhtml" id="div-nome">
-						<ui:define name="label">Nome:</ui:define>
-						<h:inputText value="#{contato.nome}"  id="nome" required="true"/>						
-					</s:decorate>
-					<s:decorate template="/WEB-INF/templates/edit.xhtml">
-						<ui:define name="label">Profissão:</ui:define>
-						<h:inputText value="#{contato.profissao}"  id="profissao" required="false"/>						
-					</s:decorate>										
-					<s:decorate template="/WEB-INF/templates/edit.xhtml">
-						<ui:define name="label">Empresa:</ui:define>
-						<h:inputText value="#{contato.empresa}"  id="empresa" required="false"/>						
-					</s:decorate>
-					<s:decorate template="/WEB-INF/templates/edit.xhtml">
-						<ui:define name="label">Telefones:</ui:define>
-						<h:inputText value="#{contato.telefone}"  id="telefone" required="false"/>						
-					</s:decorate>
-					<s:decorate template="/WEB-INF/templates/edit.xhtml">
-						<ui:define name="label">Email:</ui:define>
-						<h:inputText value="#{contato.email}"  id="email" required="false"/>						
-					</s:decorate>
-					<s:decorate template="/WEB-INF/templates/edit.xhtml">
-						<ui:define name="label">Nascimento:</ui:define>
-						<h:inputText value="#{contato.dataNascimento}"  id="nascimento">
-							<s:convertDateTime type="date"></s:convertDateTime>
-						</h:inputText>						
-					</s:decorate><s:decorate template="/WEB-INF/templates/edit.xhtml">
-						<ui:define name="label">Endereço:</ui:define>
-						<h:inputText value="#{contato.endereco}"  id="endereco" required="false"/>						
-					</s:decorate>
+					<h:panelGrid columns="2">
+						<h:outputLabel value="Nome" />
+						<h:inputText value="#{contato.nome}"  />
+						
+						<h:outputLabel value="Profissão" />
+						<h:inputText value="#{contato.profissao}" />
+						
+						<h:outputLabel value="Empresa" />
+						<h:inputText value="#{contato.empresa}" />
+						
+						<h:outputLabel value="Telefones" />
+						<h:inputText value="#{contato.telefone}" id="telefone2" />
+						
+						<h:outputLabel value="Email" />
+						<h:inputText value="#{contato.email}" />
+						
+						<h:outputLabel value="Nascimento" />
+						<h:inputText value="#{contato.dataNascimento}" />
+						
+						<h:outputLabel value="Endereço" />
+						<h:inputText value="#{contato.endereco}" />
+					</h:panelGrid>
 					<h:commandButton value="Salvar" action="#{contatoBean.salvar}" />
 				</h:form>
 			</ui:define>
