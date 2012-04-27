@@ -4,11 +4,43 @@
 	font-family: Verdana, sans-serif;
 }
 body {
-	background-color: gray;
 	margin: 0;
 	min-width: 960px;
 }
-footer {
+input[type="text"], input[type="password"] {
+	font-size: 18px;
+	padding: 8px;
+}
+#top{}
+#content {
+	
+}
+#footer {
 	font-size: 8px;
 	text-align: center;
+}
+div#login {
+	background-color: gray;
+	border: 2px solid black;
+	margin: 150px 0 0 0;
+	text-align: center;
+}
+div#login h1 {
+	background: #c1c1c1;
+	margin: 0;
+	padding: 10px 0;
+}
+div#login input[type="submit"] {
+	font-size: 20px;
+}
+
+/**
+** Formulario
+**/
+.required {
+	color: red;
+	font-weight: bold;
+}
+.error {
+	color: red;
 }

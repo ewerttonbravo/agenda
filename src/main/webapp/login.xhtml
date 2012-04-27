@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+<head>
+<title>
+	Agenda Telefônica
+</title>
+<link rel="stylesheet" type="text/css"
+	href="#{facesContext.externalContext.requestContextPath}/resources/css/default.css" />
+<link rel="stylesheet" type="text/css"
+	href="#{facesContext.externalContext.requestContextPath}/resources/css/fluid_grid.css" />
+</head>
+<body>
+	<div class="container_12">
+		<div id="login" class="grid_5 push_3">
+			<h1>Agenda Telefônica</h1>
+			<h3>Área de acesso</h3>
+			
+			<h:outputLabel value="Email:" /><br/>
+			<h:inputText value="" id="email"/>
+			<br/><br/>		
+			<h:outputLabel value="Senha:" /><br/>
+			<h:inputSecret value="" id="senha"/>
+			<br/><br/>
+			<h:commandButton action="login" value="entrar" />
+			<s:link value="Esqueci minha senha" view="/paginas/contato/new.xhtml"></s:link>
+		</div>
+	</div>
+</body>
+
+</html>
