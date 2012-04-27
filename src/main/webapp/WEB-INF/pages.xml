@@ -11,14 +11,14 @@
         </navigation>
     </page -->
 	
-	<page view-id="/paginas/contato/new.xhtml">
-		<navigation from-action="#{contatoBean.salvar}">
+	<page view-id="/paginas/contato/*">
+		<navigation>
 			<rule if-outcome="success">
 				<redirect view-id="/paginas/contato/contatos.xhtml" include-page-params="false">
 				</redirect>
 			</rule>
-			<rule if-outcome="fail">
-				<redirect view-id="/index.html"></redirect>
+			<rule if-outcome="editar">
+				<redirect view-id="/paginas/contato/editar.xhtml"></redirect>
 			</rule>
 		</navigation>
 	</page>

@@ -6,8 +6,8 @@
       xmlns:s="http://jboss.com/products/seam/taglib">
 
 	<ui:composition template="/WEB-INF/templates/form.xhtml">
-			<ui:define name="pageTitle">Novo contato</ui:define>
-			<ui:param name="pageHeader" value="Novo Contato" />
+			<ui:define name="pageTitle">Editar contato</ui:define>
+			<ui:param name="pageHeader" value="Editar Contato" />
 			<ui:define name="formulario">
 				<h:form id="contato_form" prependId="false">
 					<s:decorate template="/WEB-INF/templates/edit.xhtml" id="div-nome">
@@ -39,7 +39,7 @@
 						<ui:define name="label">Endereço:</ui:define>
 						<h:inputText value="#{contato.endereco}"  id="endereco" required="false"/>						
 					</s:decorate>
-					<h:commandButton value="Salvar" action="#{contatoBean.salvar}" />
+					<h:commandButton value="Salvar" action="#{contatoBean.salvarAlteracoes}" />
 				</h:form>
 			</ui:define>
 	</ui:composition>

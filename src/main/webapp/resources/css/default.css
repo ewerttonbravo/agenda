@@ -1,14 +1,91 @@
 @CHARSET "UTF-8";
 
 * {
-	font-family: Verdana, sans-serif;
+	font-family: Trebuchet MS, Verdana, sans-serif;
 }
 body {
-	background-color: gray;
 	margin: 0;
 	min-width: 960px;
 }
-footer {
-	font-size: 8px;
+/*
+ ****************************************
+ *	Form
+ ****************************************
+ */
+input {
+	font-size: 18px;
+	padding: 8px;
+}
+.error input{
+	border-color: red;
+}
+.error {
+	color: red;
+}
+.required {
+	color: red;
+	font-weight: bold;
+}
+
+label {
+	cursor: pointer;
+	font-size: 18px;
+}
+legend {
+	font-size: 22px;
+}
+#top {
+	background-color: #006F91;
+	color: white;
+}
+#top H1 {
+	font-size: 36pt;
+	margin: 0 0 0 5%;
+	padding: 45px 0;
+}
+#content {
+	min-height: 500px;
+}
+#footer {
+	background-color: #c1c1c1;
+	color: white;
+	font-size: 12px;
+	min-height: 160px;
 	text-align: center;
 }
+
+div#login {
+	background-color: gray;
+	border: 2px solid black;
+	margin: 200px 0 0 0;
+}
+#login h2 {
+	background-color: #c1c1c1;
+	margin: 0 0px 20px 0;
+	padding: 7px;
+	text-align: center;
+}
+
+#login input[type="text"], input[type="password"] {
+	margin: 10px 2%;
+	width: 90%;
+}
+
+/*******************************************************************
+	table classes
+*******************************************************************/
+.table {
+	margin: 1em 0 1em 0;
+  	border-collapse: collapse;
+	width: 100%;
+}
+.table th {
+  text-align: center;
+}
+.table th, .table td {
+	border: 1px silver solid;
+	padding: 0.2em;
+}
+td.centered {
+	text-align: center;
+} 

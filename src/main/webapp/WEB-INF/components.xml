@@ -34,6 +34,9 @@
         </core:bundle-names>
     </core:resource-loader>
     
+    
+    <international:locale-config default-locale="en" supported-locales="en pt_BR"/>
+    
     <persistence:entity-manager-factory name="agendaEntityManagerFactory"
     	persistence-unit-name="agendaPU">
     </persistence:entity-manager-factory>
