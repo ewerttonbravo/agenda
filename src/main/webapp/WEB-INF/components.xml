@@ -21,7 +21,7 @@
             http://jboss.com/products/seam/international http://jboss.com/products/seam/international-2.2.xsd
             http://jboss.com/products/seam/components http://jboss.com/products/seam/components-2.2.xsd">
     
-    <core:init debug="true" security-enabled="false" />
+    <core:init debug="true" security-enabled="true" />
     
     <core:manager concurrent-request-timeout="500" 
                   conversation-timeout="180000" 
@@ -52,5 +52,9 @@
     <web:character-encoding-filter encoding="UTF-8" override-client="true" />
     
     <web:session invalidate-on-scheme-change="true" />
+    
+    <event type="org.jboss.seam.security.loginSuccessful">
+		<action execute="#{redirect.returnToCapturedView}"/>
+	</event>
     
 </components>

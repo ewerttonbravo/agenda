@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pages xmlns="http://jboss.com/products/seam/pages"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd">
+       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd"
+       login-view-id="/login.xhtml">
+       
     
     <!-- page view-id="/*">
         <navigation from-action="#{}">
@@ -35,8 +37,7 @@
 			</rule>
 		</navigation>
 	</page>
-	
-	<exception class="org.jboss.seam.security.NotLoggedInException">
-		<redirect view-id="/login.xhtml"></redirect>
-	</exception>
+	<page view-id="/paginas/usuario/*" login-required="true">
+		<restrict>#{s:hasRole('admin')}</restrict>
+	</page>
 </pages>
