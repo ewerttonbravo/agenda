@@ -24,4 +24,12 @@
 			</rule>
 		</navigation>
 	</page>
+	
+	<page view-id="/cadastro.xhtml">
+		<navigation from-action="#{usuarioBean.salvar}">
+			<rule if-outcome="success">
+				<redirect view-id="/login.xhtml"></redirect>
+			</rule>
+		</navigation>
+	</page>
 </pages>

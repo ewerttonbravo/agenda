@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition template="/WEB-INF/templates/application.xhtml">
+			<ui:define name="pageTitle">Todos os Usuarios</ui:define>
+			<ui:define name="content">
+				<h:form>
+					<h:dataTable value="#{usuarios}" var="u" styleClass="table">
+						<h:column>
+							<f:facet name="header">ID</f:facet>
+							<h:outputText value="#{u.id}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Email</f:facet>
+							<h:outputText value="#{u.email}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Role</f:facet>
+							<h:outputText value="#{u.role}" />
+						</h:column>
+					</h:dataTable>
+				</h:form>
+			</ui:define>
+	</ui:composition>
+
+</html>

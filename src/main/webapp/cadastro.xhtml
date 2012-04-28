@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+
+	<ui:composition template="/WEB-INF/templates/formulario.xhtml">
+			<ui:define name="pageTitle">Novo usuario</ui:define>
+			<ui:define name="form">
+				<h:form id="usuario_form" prependId="false">
+					
+					<s:decorate template="/WEB-INF/templates/edit.xhtml">
+						<ui:define name="label">Email:</ui:define>
+						<h:inputText value="#{usuario.email}"
+							id="email" label="email" required="true" />
+					</s:decorate>
+					<s:decorate template="/WEB-INF/templates/edit.xhtml">
+						<ui:define name="label">Senha:</ui:define>
+						<h:inputSecret value="#{usuario.senha}" id="senha" 
+							label="senha" required="true" maxlength="8" />
+					</s:decorate>
+					
+					<s:decorate template="/WEB-INF/templates/edit.xhtml">
+						<ui:define name="label">Confirmacao Senha:</ui:define>
+						<h:inputSecret value="#{usuario.confSenha}" id="conf-senha" 
+							required="true" maxlength="8" label="confirmacao de senha">
+							<s:validateEquality for="senha" />
+						</h:inputSecret>
+						 
+					</s:decorate>
+					<h:commandButton value="Salvar" action="#{usuarioBean.salvar}" />
+				</h:form>
+			</ui:define>
+	</ui:composition>
+</html>
