@@ -11,6 +11,9 @@
         </navigation>
     </page -->
 	
+	<page view-id="/paginas/*" login-required="true">
+	</page>
+	
 	<page view-id="/paginas/contato/*">
 		<navigation>
 			<rule if-outcome="success">
@@ -32,4 +35,8 @@
 			</rule>
 		</navigation>
 	</page>
+	
+	<exception class="org.jboss.seam.security.NotLoggedInException">
+		<redirect view-id="/login.xhtml"></redirect>
+	</exception>
 </pages>

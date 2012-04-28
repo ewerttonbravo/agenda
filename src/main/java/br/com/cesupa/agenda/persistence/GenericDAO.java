@@ -14,10 +14,10 @@ import org.jboss.seam.log.Log;
 public abstract class GenericDAO<T, K extends java.io.Serializable> {
 	
 	@Logger
-	private Log logger;
+	protected Log logger;
 	
 	@In("agendaEntityManager")
-	private EntityManager entityManager;
+	protected EntityManager entityManager;
 	
 	protected Class<T> _class;
 	

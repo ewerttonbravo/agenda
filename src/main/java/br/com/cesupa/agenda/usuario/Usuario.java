@@ -1,5 +1,7 @@
 package br.com.cesupa.agenda.usuario;
 
+import static org.jboss.seam.ScopeType.SESSION;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,15 +14,20 @@ import org.hibernate.validator.Length;
 import org.hibernate.validator.NotEmpty;
 import org.hibernate.validator.NotNull;
 import org.jboss.seam.annotations.Name;
-import org.jboss.seam.annotations.security.Restrict;
+import org.jboss.seam.annotations.Role;
 
 @Name("usuario")
 @Entity
 @NamedQueries({
 	@NamedQuery(name="findUsuarioByEmail", 
 				query="select u from Usuario u where u.email = :email"),
-	@NamedQuery(name="findAllUsuario", query="from Usuario")
+	@NamedQuery(name="findAllUsuario", query="from Usuario"),
+	@NamedQuery(name="findUsuarioByEmailAndSenha",
+				query="select u from Usuario u where u.email = :email" +
+						" and u.senha = :senha")
+	
 })
+@Role(name="currentUser", scope=SESSION)
 public class Usuario {
 	
 	@Id

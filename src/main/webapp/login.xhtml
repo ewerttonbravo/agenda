@@ -19,17 +19,18 @@
 		<div id="login" class="grid_5 push_3">
 			<h1>Agenda Telefônica</h1>
 			<h3>Área de acesso</h3>
-			
-			<h:outputLabel value="Email:" /><br/>
-			<h:inputText value="" id="email"/>
-			<br/><br/>		
-			<h:outputLabel value="Senha:" /><br/>
-			<h:inputSecret value="" id="senha"/>
-			<br/><br/>
-			<h:commandButton action="login" value="entrar" />
+			<h:form>
+				<h:outputLabel value="Email:" /><br/>
+				<h:inputText value="#{credentials.username}" id="email"/>
+				<br/><br/>		
+				<h:outputLabel value="Senha:" /><br/>
+				<h:inputSecret value="#{credentials.password}" id="senha"/>
+				<br/><br/>
+				<h:commandButton action="#{identity.login}" value="entrar" />
+			</h:form>
 			<s:link value="Esqueci minha senha" view="/paginas/contato/new.xhtml"></s:link>
 			<br />
-			<s:link value="Deseje me cadastrar" view="/cadastro.xhtml"></s:link>
+			<s:link value="Desejo me cadastrar" view="/cadastro.xhtml"></s:link>
 		</div>
 	</div>
 </body>

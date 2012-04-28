@@ -27,6 +27,8 @@
                   conversation-timeout="180000" 
                   conversation-id-parameter="cid"
                   parent-conversation-id-parameter="pid" />
+                  
+	<security:identity authenticate-method="#{autenticador.login}" />                  
     
     <core:resource-loader>
         <core:bundle-names>
@@ -46,17 +48,6 @@
    	/>
    	
    	<transaction:entity-transaction entity-manager="#{agendaEntityManager}" />
-	
-	<!--
-    <persistence:hibernate-session-factory name="agendaSessionFactory" />
-    
-    <persistence:managed-hibernate-session name="agendaSession"
-                                           session-factory="#{agendaSessionFactory}"
-                                           auto-create="true" />
-                                           
-    <transaction:hibernate-transaction session="#{agendaSession}" />
-     -->
-    
     
     <web:character-encoding-filter encoding="UTF-8" override-client="true" />
     
