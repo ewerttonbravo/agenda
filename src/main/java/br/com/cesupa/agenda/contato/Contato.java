@@ -5,10 +5,10 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
-import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.Name;
-import org.jboss.seam.annotations.Scope;
 
 
 
@@ -20,17 +20,32 @@ import org.jboss.seam.annotations.Scope;
  */
 @Entity
 @Name("contato")
-@Scope(ScopeType.EVENT)
+@NamedQueries({
+	@NamedQuery(name="findAllContato", query="from Contato")
+})
 public class Contato {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	@org.hibernate.validator.NotNull
+	@org.hibernate.validator.NotEmpty
+	@org.hibernate.validator.Length(min=2, max=80)
 	private String nome;
+	
 	private String profissao;
 	private String empresa;
+	
+	@org.hibernate.validator.NotEmpty
+	@org.hibernate.validator.Length(min=8, max=8)
 	private String telefone;
+	
+	@org.hibernate.validator.NotEmpty
+	@org.hibernate.validator.Email
+	@org.hibernate.validator.Length(min=3, max=60)
 	private String email;
+	
 	private Date dataNascimento;
 	private String endereco;
 	

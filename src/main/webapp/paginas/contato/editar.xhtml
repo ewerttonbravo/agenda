@@ -6,7 +6,7 @@
       xmlns:s="http://jboss.com/products/seam/taglib">
 
 	<ui:composition template="/WEB-INF/templates/formulario.xhtml">
-			<ui:define name="pageTitle">Novo contato</ui:define>
+			<ui:define name="pageTitle">Editar: #{contato.nome}</ui:define>
 			<ui:define name="form">
 				<h:form id="contato_form" prependId="false">
 					
@@ -45,7 +45,7 @@
 						<h:inputText value="#{contato.endereco}" id="email" 
 							required="false"/>
 					</s:decorate>
-					<h:commandButton value="Salvar" action="#{contatoBean.salvar}" />
+					<h:commandButton value="Atualizar" action="#{contatoBean.salvarAlteracoes}" />
 				</h:form>
 			</ui:define>
 	</ui:composition>

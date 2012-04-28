@@ -11,7 +11,9 @@
 				styleClass="required">*</s:span>
 		</s:label>
 		<br />
-		<ui:insert />
+		<s:validateAll>
+			<ui:insert />
+		</s:validateAll>
 		<s:message errorClass="error"></s:message>
 	</ui:composition>
 </html>

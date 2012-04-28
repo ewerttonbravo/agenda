@@ -7,7 +7,26 @@
 	<ui:composition template="/WEB-INF/templates/application.xhtml">
 			<ui:define name="pageTitle">Todos os Contatos</ui:define>
 			<ui:define name="content">
-				Lista de todos os contatos
+				<h:form>
+					<h:dataTable value="#{contatos}" var="c" styleClass="table">
+						<h:column>
+							<f:facet name="header">ID</f:facet>
+							<h:outputText value="#{c.id}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							<h:commandLink value="#{c.nome}" action="#{contatoBean.editar}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Email</f:facet>
+							<h:outputText value="#{c.email}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Profissão</f:facet>
+							<h:outputText value="#{c.profissao}" />
+						</h:column>
+					</h:dataTable>
+				</h:form>
 			</ui:define>
 	</ui:composition>
 
